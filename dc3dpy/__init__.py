@@ -1,5 +1,6 @@
 import numpy
-from ctypes import *
+import ctypes
+from ctypes import cdll
 dc3d = cdll.LoadLibrary("/usr/lib/dc3d.so")
 @numpy.vectorize
 def ux(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
