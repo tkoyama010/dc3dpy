@@ -1,8 +1,8 @@
-import numpy
+import numpy as np
 import ctypes
 from ctypes import cdll
 dc3d = cdll.LoadLibrary("/usr/lib/dc3d.so")
-@numpy.vectorize
+@np.vectorize
 def ux(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   alpha = ctypes.c_float(alpha)
   x = ctypes.c_float(x)
@@ -19,7 +19,7 @@ def ux(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   disl3 = ctypes.c_float(disl3)
   dc3d.ux.restype = ctypes.c_float
   return  dc3d.ux(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3)
-@numpy.vectorize
+@np.vectorize
 def uy(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   alpha = ctypes.c_float(alpha)
   x = ctypes.c_float(x)
@@ -36,7 +36,7 @@ def uy(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   disl3 = ctypes.c_float(disl3)
   dc3d.uy.restype = ctypes.c_float
   return  dc3d.uy(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3)
-@numpy.vectorize
+@np.vectorize
 def uz(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   alpha = ctypes.c_float(alpha)
   x = ctypes.c_float(x)
@@ -53,7 +53,7 @@ def uz(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   disl3 = ctypes.c_float(disl3)
   dc3d.uz.restype = ctypes.c_float
   return  dc3d.uz(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3)
-@numpy.vectorize
+@np.vectorize
 def iret(alpha, x, y, z, depth, dip, al1, al2, aw1, aw2, disl1, disl2, disl3):
   alpha = ctypes.c_float(alpha)
   x = ctypes.c_float(x)
